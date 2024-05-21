@@ -3,7 +3,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar RentalApplication.jar
+COPY --from=build /target/RentalApplication-0.0.1-SNAPSHOT.jar RentalApplication.jar
 EXPOSE 8080
 ENTRYPOINT [ "java","-jar","RentalApplication.jar"]
 
